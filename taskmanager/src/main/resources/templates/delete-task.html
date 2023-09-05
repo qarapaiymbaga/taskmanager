@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Task</title>
+</head>
+<body>
+<h1>Delete Task</h1>
+<form action="/tasks/delete" method="post">
+    <input type="hidden" id="id" name="id" th:value="${task.id}" required>
+
+    <p>Are you sure you want to delete the task "<span th:text="${task.name}"></span>"?</p>
+
+    <input type="submit" value="Delete Task">
+</form>
+</body>
+</html>

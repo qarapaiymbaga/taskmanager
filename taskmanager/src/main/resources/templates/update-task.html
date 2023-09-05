@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Task</title>
+</head>
+<body>
+<h1>Update Task</h1>
+<form action="/tasks/update" method="post">
+    <input type="hidden" id="id" name="id" th:value="${task.id}" required>
+
+    <label for="name">Task Name:</label>
+    <input type="text" id="name" name="name" th:value="${task.name}" required><br><br>
+
+    <label for="completed">Completed:</label>
+    <input type="checkbox" id="completed" name="completed" th:checked="${task.completed}"><br><br>
+
+    <label for="description">Description:</label><br>
+    <textarea id="description" name="description" rows="4" cols="50" th:text="${task.description}"></textarea><br><br>
+
+    <input type="submit" value="Update Task">
+</form>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Task</title>
+</head>
+<body>
+<h1>Create a New Task</h1>
+<form action="/tasks/create" method="post">
+    <label for="name">Task Name:</label>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="completed">Completed:</label>
+    <input type="checkbox" id="completed" name="completed"><br><br>
+
+    <label for="description">Description:</label><br>
+    <textarea id="description" name="description" rows="4" cols="50"></textarea><br><br>
+
+    <input type="submit" value="Create Task">
+</form>
+</body>
+</html>

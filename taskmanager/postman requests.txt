@@ -1,0 +1,40 @@
+Все действия происходят через фронт, через постман только создание ролей. Таблицы для бд создадутся автоматически по моделькам
+1) Первым делом нужно создать роли: ADMIN и USER
+curl --location 'http://localhost:8081/roles?role=ROLE_ADMIN' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Basic dXNlcjp1c2Vy' \
+--header 'Cookie: JSESSIONID=156C38ACBB69E82EE552C927A2EA2357' \
+--data '{
+    "roleName": "ROLE_ADMIN"
+}
+'
+curl --location 'http://localhost:8081/roles?role=ROLE_ADMIN' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Basic dXNlcjp1c2Vy' \
+--header 'Cookie: JSESSIONID=156C38ACBB69E82EE552C927A2EA2357' \
+--data '{
+    "roleName": "ROLE_USER"
+}
+'
+Админ может делать все операции над задачами
+Обычный пользователь может создавать и просматривать задачи
+
+2) После нужно зарегистроваться http://localhost:8081/users/register
+3) После регистрации перенаправит на страницу логина
+4) После подтверждения личности перенапрваит на страницу просмотра всех задач, где можно будет проводить операции над задачами
+
+
+Post request
+{
+    "name": "Task 1",
+    "description": "Task 1",
+    "isCompleted": true
+}
+
+{
+    "name": "Task 2",
+    "description": "Task 2",
+    "isCompleted": false
+}
+
+
